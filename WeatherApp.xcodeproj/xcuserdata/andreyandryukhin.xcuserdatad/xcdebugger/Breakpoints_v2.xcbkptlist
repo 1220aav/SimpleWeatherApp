@@ -14,8 +14,8 @@
             filePath = "WeatherApp/NetworkWeatherManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "fetchCurrentWeather(forCity:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "WeatherApp/NetworkWeatherManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "parseJSON(withData:)"
             landmarkType = "7">
          </BreakpointContent>
