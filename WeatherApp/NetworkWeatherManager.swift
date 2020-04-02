@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NetworkWeatherManager {
+class NetworkWeatherManager {
     
     var onCompletion: ((CurrentWeatherModel) -> Void)?
     
