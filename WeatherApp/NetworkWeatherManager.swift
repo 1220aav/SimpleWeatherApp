@@ -13,12 +13,26 @@ struct NetworkWeatherManager {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?appid=\(API_KEY)&q=\(city)&units=metric"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { data, response, error in
             if let data = data {
-                let dataString = String(data: data, encoding: .utf8)
-                print(dataString!)
+                let currentWeather = self.parseJSON(withData: data)
             }
         }
         task.resume()
+    }
+    
+    func parseJSON(withData data: Data) -> CurrentWeatherModel? {
+        let decoder = JSONDecoder()
+        
+        do {
+            let currentWeatherData = try decoder.decode(NetworkWeatherData.self, from: data)
+            guard let CurrentWeather = CurrentWeatherModel(currentWeatherData: currentWeatherData) else {
+                return nil
+            }
+            return CurrentWeather
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        return nil
     }
 }

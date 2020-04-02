@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B27DB44624366C7F007EFA1D /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DB44524366C7F007EFA1D /* CurrentWeatherModel.swift */; };
 		B2943CE124350DE500255C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CE024350DE500255C94 /* AppDelegate.swift */; };
 		B2943CE324350DE500255C94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CE224350DE500255C94 /* SceneDelegate.swift */; };
 		B2943CE524350DE500255C94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CE424350DE500255C94 /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		B2943CF524350F7300255C94 /* ViewController+alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CF424350F7300255C94 /* ViewController+alertController.swift */; };
 		B2943CF72435211900255C94 /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CF62435211900255C94 /* NetworkWeatherManager.swift */; };
 		B2943CF9243522C900255C94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CF8243522C900255C94 /* Constants.swift */; };
+		B2943CFB2435298300255C94 /* NetworkWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2943CFA2435298300255C94 /* NetworkWeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B27DB44524366C7F007EFA1D /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
 		B2943CDD24350DE500255C94 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2943CE024350DE500255C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2943CE224350DE500255C94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		B2943CF424350F7300255C94 /* ViewController+alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+alertController.swift"; sourceTree = "<group>"; };
 		B2943CF62435211900255C94 /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 		B2943CF8243522C900255C94 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B2943CFA2435298300255C94 /* NetworkWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 				B2943CE224350DE500255C94 /* SceneDelegate.swift */,
 				B2943CE424350DE500255C94 /* ViewController.swift */,
 				B2943CF424350F7300255C94 /* ViewController+alertController.swift */,
+				B2943CFA2435298300255C94 /* NetworkWeatherData.swift */,
 				B2943CF62435211900255C94 /* NetworkWeatherManager.swift */,
+				B27DB44524366C7F007EFA1D /* CurrentWeatherModel.swift */,
 				B2943CF8243522C900255C94 /* Constants.swift */,
 				B2943CE624350DE500255C94 /* Main.storyboard */,
 				B2943CE924350DE900255C94 /* Assets.xcassets */,
@@ -147,10 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27DB44624366C7F007EFA1D /* CurrentWeatherModel.swift in Sources */,
 				B2943CE524350DE500255C94 /* ViewController.swift in Sources */,
 				B2943CF524350F7300255C94 /* ViewController+alertController.swift in Sources */,
 				B2943CF72435211900255C94 /* NetworkWeatherManager.swift in Sources */,
 				B2943CE124350DE500255C94 /* AppDelegate.swift in Sources */,
+				B2943CFB2435298300255C94 /* NetworkWeatherData.swift in Sources */,
 				B2943CE324350DE500255C94 /* SceneDelegate.swift in Sources */,
 				B2943CF9243522C900255C94 /* Constants.swift in Sources */,
 			);

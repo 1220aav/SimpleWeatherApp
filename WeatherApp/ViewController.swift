@@ -9,9 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let API_KEY = "0ef52d87f593f33983031c83ea2bda86"
-    let cities = ["New York", "Moscow", "Lisbon", "London"]
 
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelingLabel: UILabel!
@@ -30,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkWeatherManager.fetchCurrentWeather(forCity: "Moscow")
+        networkWeatherManager.fetchCurrentWeather(forCity: "London")
         
     }
 
