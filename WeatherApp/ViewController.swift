@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     
     var networkWeatherManager = NetworkWeatherManager()
+    lazy var locationManager: CLLocationManager = {
+        let lm = CLLocationManager()
+        lm.delegate = self
+        lm.desiredAccuracy = kCLLocationAccuracyKilometer
+        lm.requestWhenInUseAuthorization()
+        return lm
+    }()
     
     @IBAction func searchAction(_ sender: UIButton) {
         self.presentSearchAlertController(withTitle: "Enter city name", message: nil, style: .alert) { [unowned self] cityName in
@@ -31,7 +39,9 @@ class ViewController: UIViewController {
             guard let self = self else { return }
             self.updateInterfaceWith(weather: currentWeather)
         }
-        networkWeatherManager.fetchCurrentWeather(forCity: "Moscow")
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestLocation()
+        }
     }
     
     func updateInterfaceWith(weather: CurrentWeatherModel) {
@@ -41,6 +51,20 @@ class ViewController: UIViewController {
             self.weatherIcon.image = UIImage(systemName: weather.systemIconNameString)
             self.cityNameLabel.text = weather.city
         }
+    }
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let lastLocation = locations.last else { return }
+        let lat = lastLocation.coordinate.latitude
+        let lon = lastLocation.coordinate.longitude
+        
+        networkWeatherManager.fetchCurrentWeather(forLatitude: lat, forLongitude: lon)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }
 
